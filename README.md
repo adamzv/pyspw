@@ -2,8 +2,14 @@
 
 ### TODO
 
-Použitie:
-`python pyServletPrintWriter.py <nazov_suboru>`
+#### Použitie:
+Výpis do konzoly:
+
+```python pyServletPrintWriter.py <nazov_suboru>```
+
+Výpis do súboru:
+
+```python pyServletPrintWriter.py <nazov_suboru> -w <nazov_suboru_na_zapis>```
 
 Výsledok:
 ```out.println("<!DOCTYPE html>");
@@ -16,5 +22,4 @@ out.println("<body>");
 out.println("");
 out.println("</body>");
 out.println("</html>");
-
 ```
