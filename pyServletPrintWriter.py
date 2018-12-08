@@ -12,6 +12,7 @@ def main():
 
     for line in enumerate(subor):
         line = line[1].rstrip()
+        line = line.replace("\"", "\\\"")
         line = f"out.println(\"{line}\");"
         # dočasne je možný len výpis do konzoly
         print(line)
