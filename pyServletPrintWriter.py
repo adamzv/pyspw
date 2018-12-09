@@ -31,14 +31,17 @@ def main():
         else:
             for line in enumerate(subor):
                 line = line[1].rstrip()
-                line = line.replace("\"", "\\\"")
-                line = f"out.println(\"{line}\");"
+                if line == "":
+                    line = "out.println();"
+                else:
+                    line = line.replace("\"", "\\\"")
+                    line = f"out.println(\"{line}\");"
                 if zapis is not None:
                     zapis.write(line + "\n")
                 else:
                     print(line)
-            subor.close()
 
+            subor.close()
             if zapis is not None:
                 zapis.close()
 
