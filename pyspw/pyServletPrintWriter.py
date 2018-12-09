@@ -53,6 +53,7 @@ def spracuj(vstupny_subor, vystupny_subor=None):
 def main():
     parser = create_parser()
     args = parser.parse_args()
+
     spracuj(args.subor[0], args.zapis)
 
 
