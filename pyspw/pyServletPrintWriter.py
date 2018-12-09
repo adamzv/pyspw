@@ -1,5 +1,4 @@
 import argparse
-import sys
 from pathlib import Path
 from datetime import datetime
 
@@ -55,7 +54,6 @@ def spracuj(vstupny_subor, vystupny_subor=None):
 def main():
     parser = create_parser()
     args = parser.parse_args()
-    print(args)
     spracuj(args.subor[0], args.zapis)
 
 
