@@ -1,13 +1,15 @@
 import argparse
 import sys
 from pathlib import Path
+from datetime import datetime
 
 
 def create_parser():
     parser = argparse.ArgumentParser(description="Spracuje html súbor do podoby využiteľnej v servletoch.\n"
                                                  "napr. out.println(\"<h1>Java PrintWriter</h1>\");")
     parser.add_argument("subor", metavar="subor", nargs=1, help="súbor, ktorého dáta sa majú spracovať")
-    parser.add_argument("-w", dest="zapis", required=False, help="voliteľný súbor, do ktorého sa majú zapísať spracované dáta")
+    const = "pyspw_" + datetime.strftime(datetime.now(), "%Y%m%d%H%M%S") + ".html"
+    parser.add_argument("-w", nargs="?", const=const, dest="zapis", required=False, help="voliteľný súbor, do ktorého sa majú zapísať spracované dáta")
 
     return parser
 
@@ -53,7 +55,7 @@ def spracuj(vstupny_subor, vystupny_subor=None):
 def main():
     parser = create_parser()
     args = parser.parse_args()
-
+    print(args)
     spracuj(args.subor[0], args.zapis)
 
 

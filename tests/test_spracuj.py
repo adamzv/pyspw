@@ -27,8 +27,10 @@ class Tests(TestCase):
         self.assertTrue(vysledok)
 
     def test_zapis_do_suboru_bez_w_argumentu(self):
-        with self.assertRaises(SystemExit):
-            args = self.parser.parse_args(["test.html", "-w"])
+        args = self.parser.parse_args(["test.html", "-w"])
+        vysledok = spracuj(args.subor[0], args.zapis)
+        self.assertTrue(vysledok)
+        os.remove(args.zapis)
 
     def test_zapis_do_suboru_s_argumentom(self):
         args = self.parser.parse_args(["test.html", "-w", "test2.html"])
@@ -47,6 +49,7 @@ class Tests(TestCase):
         subor = Path("test2.html")
         if subor.exists():
             os.remove("test2.html")
+
 
 if __name__ == "__main__":
     unittest.main(buffer=False)

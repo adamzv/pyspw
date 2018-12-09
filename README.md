@@ -11,6 +11,9 @@ Výpis do súboru:
 
 ```python pyServletPrintWriter.py <nazov_suboru> -w <nazov_suboru_na_zapis>```
 
+```python pyServletPrintWriter.py <nazov_suboru> -w``` vytvorí súbor tvaru `pyspw_<datum_cas>`
+
+
 Výsledok:
 ```out.println("<!DOCTYPE html>");
 out.println("<html lang=\"en\">");
