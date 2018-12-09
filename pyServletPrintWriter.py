@@ -2,13 +2,17 @@ import argparse
 import sys
 
 
-def main():
+def parse_args(args):
     parser = argparse.ArgumentParser(description="Spracuje html súbor do podoby využiteľnej v servletoch.\n"
                                                  "napr. out.println(\"<h1>Java PrintWriter</h1>\");")
     parser.add_argument("subor", metavar="subor", nargs=1, help="súbor, ktorého dáta sa majú spracovať")
     parser.add_argument("-w", dest="zapis")
 
-    args = parser.parse_args()
+    return parser.parse_args(args)
+
+
+def main():
+    args = parse_args(sys.argv[1:])
 
     try:
         subor = open(args.subor[0], "r", encoding="utf8")
@@ -18,8 +22,8 @@ def main():
         zapis = None
     # Ak sa nenájde súbor z ktorého chceme čítať
     except FileNotFoundError:
-        print("Súbor na čítanie sa nenašiel.")
         subor = None
+        print("Súbor na čítanie sa nenašiel.")
     finally:
         # Ak sa súbor na čítanie nenašiel, ukonči program
         if subor is None:
