@@ -1,7 +1,5 @@
 # pyspw [![Build Status](https://travis-ci.org/adamzv/pyspw.svg?branch=master)](https://travis-ci.org/adamzv/pyspw)
 
-### TODO
-
 #### Použitie:
 Výpis do konzoly:
 
